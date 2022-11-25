@@ -1,4 +1,4 @@
-from src.day02.controller import Controller
+from src.shared.controller import Controller
 from src.day02.solver import Day02Solver
 
 class Day02PartASolver(Day02Solver):

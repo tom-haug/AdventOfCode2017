@@ -1,5 +1,5 @@
 from abc import abstractclassmethod
-from src.day02.controller import Solver
+from src.shared.controller import Solver
 from src.shared.file_loading import load_text_file
 
 class Day02Solver(Solver):
