@@ -1,15 +1,14 @@
-from src.shared.file_loading import load_text_file
 from aocd import submit
+from src.day02.common import Solver
+
+class PartBSolver(Solver):
+  def calc_row_result(self, values: list[int]) -> int:
+    (largest, smallest) = get_divisible_numbers(values)
+    return int(largest / smallest)
 
 def get_part_two_result(file_name: str):
-  input = load_text_file(file_name)
-  checksum_values: list[int] = []
-  for line in input:
-    values = [int(value) for value in line.split('\t')]
-    (largest, smallest) = get_divisible_numbers(values)
-    quotient = int(largest / smallest)
-    checksum_values.append(quotient)
-  return sum(checksum_values)
+  solver = PartBSolver(file_name)
+  return solver.solve()
 
 def get_divisible_numbers(values: list[int]) -> tuple[int, int]:
   for idx_1, num_1 in enumerate(values):

@@ -1,18 +1,18 @@
 from src.shared.file_loading import load_text_file
 from aocd import submit
+from src.day02.common import Solver
 
-def get_part_one_result(file_name: str):
-  input = load_text_file(file_name)
-  checksum_values: list[int] = []
-  for line in input:
-    values = [int(value) for value in line.split('\t')]
+class PartASolver(Solver):
+  def calc_row_result(self, values: list[int]) -> int:
     largest = max(values)
     smallest = min(values)
-    diff = largest - smallest
-    checksum_values.append(diff)
-  return sum(checksum_values)
+    return largest - smallest
+
+def get_part_one_result(file_name: str):
+  solver = PartASolver(file_name)
+  return solver.solve()
 
 if __name__ == "__main__":
   result = get_part_one_result('src/day02/input.txt')
-  submit(result, part="a", day=2, year=2017)
+  # submit(result, part="a", day=2, year=2017)
   print(result)
