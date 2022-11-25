@@ -1,11 +1,11 @@
-from abc import ABC, abstractclassmethod
-from asyncio.proactor_events import _ProactorBaseWritePipeTransport
+from abc import abstractclassmethod
+from src.day02.controller import Solver
 from src.shared.file_loading import load_text_file
 
-class Solver(ABC):
+class Day02Solver(Solver):
   data: list[list[int]]
 
-  def __init__(self, file_path: str):
+  def initialize(self, file_path: str):
     self.data = self.__load_data_structures(file_path)
 
   def __load_data_structures(self, file_path: str):
@@ -23,4 +23,3 @@ class Solver(ABC):
   @abstractclassmethod
   def calc_row_result(self, values: list[int]) -> int:
     pass
-

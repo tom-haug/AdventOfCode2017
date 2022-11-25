@@ -1,18 +1,24 @@
-from src.shared.file_loading import load_text_file
-from aocd import submit
-from src.day02.common import Solver
+from src.day02.controller import Controller
+from src.day02.solver import Day02Solver
 
-class PartASolver(Solver):
+class Day02PartASolver(Day02Solver):
   def calc_row_result(self, values: list[int]) -> int:
     largest = max(values)
     smallest = min(values)
     return largest - smallest
 
-def get_part_one_result(file_name: str):
-  solver = PartASolver(file_name)
-  return solver.solve()
+
+class Day02PartAController(Controller):
+  def new_solver(self):
+    return Day02PartASolver()
+
+  def sample_files(self) -> list[(str, int)]:
+      return [('src/day02/input_sample01.txt', 18)]
+
+  def file_path(self) -> str:
+      return 'src/day02/input.txt'
+
 
 if __name__ == "__main__":
-  result = get_part_one_result('src/day02/input.txt')
-  # submit(result, part="a", day=2, year=2017)
-  print(result)
+  controller = Day02PartAController(2017, 2, 'a')
+  controller.run()

@@ -1,14 +1,22 @@
-from aocd import submit
-from src.day02.common import Solver
+from src.day02.controller import Controller
+from src.day02.solver import Day02Solver
 
-class PartBSolver(Solver):
+class Day02PartBSolver(Day02Solver):
   def calc_row_result(self, values: list[int]) -> int:
     (largest, smallest) = get_divisible_numbers(values)
     return int(largest / smallest)
 
-def get_part_two_result(file_name: str):
-  solver = PartBSolver(file_name)
-  return solver.solve()
+
+class Day02PartBController(Controller):
+  def new_solver(self):
+    return Day02PartBSolver()
+
+  def sample_files(self) -> list[(str, int)]:
+      return [('src/day02/input_sample02.txt', 9)]
+
+  def file_path(self) -> str:
+      return 'src/day02/input.txt'
+
 
 def get_divisible_numbers(values: list[int]) -> tuple[int, int]:
   for idx_1, num_1 in enumerate(values):
@@ -20,7 +28,7 @@ def get_divisible_numbers(values: list[int]) -> tuple[int, int]:
         return (largest, smallest)
   raise f"Problem - No divisible numbers in [{values}]"
 
+
 if __name__ == "__main__":
-  result = get_part_two_result('src/day02/input.txt')
-  # submit(result, part="b", day=2, year=2017)
-  print(result)
+  controller = Day02PartBController(2017, 2, 'b')
+  controller.run()
