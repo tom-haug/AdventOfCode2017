@@ -9,6 +9,9 @@ class Day02PartASolver(Day02Solver):
 
 
 class Day02PartAController(Controller):
+  def __init__(self):
+    super().__init__(2017, 2, 'a')
+
   def new_solver(self):
     return Day02PartASolver()
 
@@ -20,5 +23,5 @@ class Day02PartAController(Controller):
 
 
 if __name__ == "__main__":
-  controller = Day02PartAController(2017, 2, 'a')
+  controller = Day02PartAController()
   controller.run()
