@@ -11,9 +11,3 @@ class TestDay02(BaseTest):
 
   def get_controller_b(self) -> Controller:
     return Day01PartBController()
-
-  def get_solver_a(self) -> Solver:
-    return Day01PartASolver()
-
-  def get_solver_b(self) -> Solver:
-    return Day01PartBSolver()
