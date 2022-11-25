@@ -8,6 +8,7 @@ numpy = "*"
 pandas = "*"
 matplotlib = "*"
 pytest = "*"
+advent-of-code-data = "*"
 
 [dev-packages]
 
