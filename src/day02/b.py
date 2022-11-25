@@ -8,6 +8,9 @@ class Day02PartBSolver(Day02Solver):
 
 
 class Day02PartBController(Controller):
+  def __init__(self):
+    super().__init__(2017, 2, 'b')
+
   def new_solver(self):
     return Day02PartBSolver()
 
@@ -30,5 +33,5 @@ def get_divisible_numbers(values: list[int]) -> tuple[int, int]:
 
 
 if __name__ == "__main__":
-  controller = Day02PartBController(2017, 2, 'b')
+  controller = Day02PartBController()
   controller.run()
