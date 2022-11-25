@@ -29,7 +29,6 @@ $ pipenv shell
 $ python -m src.day02.a
 ```
 
-
 ## Submit
 ```python
 from aocd import submit
