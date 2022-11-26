@@ -3,15 +3,7 @@ import argparse
 from typing import Any
 from aocd import submit
 
-
-class Solver(ABC):
-    @abstractclassmethod
-    def initialize(self, file_path: str) -> None:
-        pass
-
-    @abstractclassmethod
-    def solve(self):
-        pass
+from src.shared.solver import Solver
 
 
 class Controller(ABC):
