@@ -4,9 +4,9 @@ from src.shared.base_test import BaseTest
 from src.shared.controller import Controller
 
 
-class TestDay02(BaseTest): 
-  def get_controller_a(self) -> Controller:
-    return Day02PartAController()
+class TestDay02(BaseTest):
+    def get_controller_a(self) -> Controller:
+        return Day02PartAController()
 
-  def get_controller_b(self) -> Controller:
-    return Day02PartBController()
+    def get_controller_b(self) -> Controller:
+        return Day02PartBController()

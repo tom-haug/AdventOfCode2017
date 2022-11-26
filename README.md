@@ -1,36 +1,52 @@
 # AdventOfCode2017
 
-## Get Data
-[advent-of-code-data](https://github.com/wimglenn/advent-of-code-data)
+## Code Gen
+### Get Session Token 
+- got to https://adventofcode.com/ 
+- make sure you are logged in
+- open devtools
+- copy value of `session` cookie
+- paste into AOC_SESSION in [.env](.env)
 
-- Make day directory
+## Run Code Gen
 ```
-$ mkdir -p src/day02
-```
-- Get Session token from browser `session` cookie
-```
-$ export AOC_SESSION={SESSION_TOKEN}
-```
-- Create input
-```
-# option 1
-$ aocd 1 2017 > src/day02/input.txt
-
-# option 2
-$ pipenv shell
-$ python
->>> from aocd import get_data
->>> get_data(day=1, year=2017)
+$ pipenv run python -m src.code_gen.create_day -d {day}
 ```
 
-## Run Day Part
+## Set Test Data
+- create files in the `day` folder for each sample data provided
+- add the samples to the `DayController` in the `part` file with filepath and expected result
+```python
+def sample_files(self) -> list[(str, int)]:
+    return [("src/day02/input_sample01.txt", 18)]
 ```
-$ pipenv shell
-$ python -m src.day02.a
+Failure to set test data will result in:
+```
+$ pipenv run python -m src.day{day}.a
+
+Exception: No sample files setup. Add these to: Day03PartAController
+```
+Failure to pass test data will result in:
+```
+$ pipenv run python -m src.day{day}.a
+
+Exception: Test Fail: Sample src/day03/input_sample01.txt, expecting: 0, actual: None
 ```
 
 ## Submit
-```python
-from aocd import submit
-submit(my_answer, part="a", day=1, year=2017)
+Once tests pass, run to submit:
+```
+$ pipenv run python -m src.day{day}.a --submit
+```
+
+## Linting
+Flake8
+```
+$ pipenv run flake8 src
+```
+
+## Formatting
+Black
+```
+$ pipenv run black src
 ```

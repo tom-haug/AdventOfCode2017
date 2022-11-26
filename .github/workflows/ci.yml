@@ -19,6 +19,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
       with:
@@ -43,10 +44,7 @@ jobs:
       run: |
         pipenv run pytest
 
-#    - name: Run linter
-#      run: |
-#        pipenv run lint
+    - name: Run linter
+      run: |
+        pipenv run flake8 src
 
-#    - name: Run formatting check
-#      run: |
-#        pipenv run format --check
