@@ -1,8 +1,7 @@
 from abc import ABC, abstractclassmethod
 import argparse
 from typing import Any
-from aocd import get_data, submit
-from os.path import exists
+from aocd import submit
 
 
 class Solver(ABC):
