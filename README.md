@@ -50,3 +50,8 @@ Black
 ```
 $ pipenv run black src
 ```
+
+## CI
+[Github Actions](https://github.com/tom-haug/AdventOfCode2017/actions/workflows/ci.yml)
+
+[pipeline config](.github/workflows/ci.yml)
