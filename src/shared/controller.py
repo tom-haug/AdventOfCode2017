@@ -82,6 +82,8 @@ def create_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description="Helper to bootstrap files for problems"
     )
-    parser.add_argument("-s", "--submit", type=int, help="Submit result if tests pass")
+    parser.add_argument(
+        "-s", "--submit", action="store_true", help="Submit result if tests pass"
+    )
 
     return parser
