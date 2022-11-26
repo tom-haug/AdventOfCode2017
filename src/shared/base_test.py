@@ -18,9 +18,7 @@ class BaseTest(ABC):
         assert len(tests) > 0
 
         for (file, expected_result) in tests:
-            solver = controller.new_solver()
-            solver.initialize(file)
-            result = solver.solve()
+            result = controller.solve(file)
             assert result == expected_result
 
     def test_part_b(self):
@@ -30,7 +28,5 @@ class BaseTest(ABC):
         assert len(tests) > 0
 
         for (file, expected_result) in tests:
-            solver = controller.new_solver()
-            solver.initialize(file)
-            result = solver.solve()
+            result = controller.solve(file)
             assert result == expected_result

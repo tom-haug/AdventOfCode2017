@@ -42,9 +42,7 @@ class Controller(ABC):
             )
 
         for (file_path, expected_result) in samples:
-            solver = self.new_solver()
-            solver.initialize(file_path)
-            result = solver.solve()
+            result = self.solve(file_path)
             if result != expected_result:
                 raise Exception(
                     f"Test Fail: Sample {file_path}, expecting: {expected_result}, actual: {result}"
@@ -54,22 +52,15 @@ class Controller(ABC):
     def run(self) -> None:
         self.__run_test_inputs()
 
-        solver = self.new_solver()
-        file_path = self.file_path()
-        self.download_if_not_exists(file_path)
-        solver.initialize(file_path)
-        result = solver.solve()
+        result = self.solve(self.file_path())
         print(f"Result: {result}")
         self.try_submit(result)
 
-    def download_if_not_exists(self, file_path: str):
-        if exists(file_path):
-            return
-
-        data = get_data(day=self.day, year=self.year)
-
-        with open(file_path, "w") as f:
-            f.write(data)
+    def solve(self, file_path):
+        solver = self.new_solver()
+        solver.initialize(file_path)
+        result = solver.solve()
+        return result
 
     def try_submit(self, result):
         args = create_parser().parse_args()
