@@ -1,5 +1,5 @@
-from src.day03.a import Day03PartAController
-from src.day03.b import Day03PartBController
+from src.days.day03.a import Day03PartAController
+from src.days.day03.b import Day03PartBController
 from src.shared.base_test import BaseTest
 from src.shared.controller import Controller
 

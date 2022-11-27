@@ -17,11 +17,15 @@ class FileData(object):
 
     @property
     def directory(self) -> str:
-        return f"src/day{self.day_string}"
+        return f"src/days/day{self.day_string}"
+
+    @property
+    def input_directory(self) -> str:
+        return f"{self.directory}/inputs"
 
     @property
     def input_file(self) -> str:
-        return f"{self.directory}/input.txt"
+        return f"{self.input_directory}/main.txt"
 
     @property
     def part_file(self) -> str:

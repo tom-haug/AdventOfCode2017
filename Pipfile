@@ -17,3 +17,11 @@ python-dotenv = "*"
 
 [requires]
 python_version = "3.10"
+
+[scripts]
+test = "pytest"
+lint = "flake8 src"
+fmt = "black src"
+new = "python -m src.new_day"
+part = "python -m src.run_part"
+submit = "python -m src.run_part --submit"
