@@ -1,12 +1,12 @@
-from src.day02.a import Day02PartAController
-from src.day02.b import Day02PartBController
+from src.days.day01.a import Day01PartAController
+from src.days.day01.b import Day01PartBController
 from src.shared.base_test import BaseTest
 from src.shared.controller import Controller
 
 
 class TestDay02(BaseTest):
     def get_controller_a(self) -> Controller:
-        return Day02PartAController()
+        return Day01PartAController()
 
     def get_controller_b(self) -> Controller:
-        return Day02PartBController()
+        return Day01PartBController()

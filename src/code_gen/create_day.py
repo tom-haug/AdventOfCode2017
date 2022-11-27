@@ -20,6 +20,7 @@ def write_file(path: str, content: str) -> None:
 def create_files(file_data: FileData) -> None:
     if not os.path.isdir(file_data.directory):
         os.makedirs(file_data.directory)
+        os.makedirs(file_data.input_directory)
         touch_file(file_data.src_init_file)
         write_file(
             file_data.input_file,
@@ -46,18 +47,7 @@ def create_files(file_data: FileData) -> None:
             )
 
 
-def create_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(
-        description="Helper to bootstrap files for problems"
-    )
-    parser.add_argument("-d", "--day", type=int, help="Day to create files for")
-
-    return parser
-
-
-if __name__ == "__main__":
-    args = create_parser().parse_args()
-
-    file_data = FileData(day=args.day, part="a")
+def create_day(day: int):
+    file_data = FileData(day=day, part="a")
 
     create_files(file_data)

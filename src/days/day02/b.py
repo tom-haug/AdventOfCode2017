@@ -1,5 +1,5 @@
 from src.shared.controller import Controller
-from src.day02.solver import Day02Solver
+from src.days.day02.solver import Day02Solver
 
 
 class Day02PartBSolver(Day02Solver):
@@ -16,10 +16,10 @@ class Day02PartBController(Controller):
         return Day02PartBSolver()
 
     def sample_files(self) -> list[(str, int)]:
-        return [("src/day02/input_sample02.txt", 9)]
+        return [("src/days/day02/inputs/b_sample01.txt", 9)]
 
     def file_path(self) -> str:
-        return "src/day02/input.txt"
+        return "src/days/day02/inputs/main.txt"
 
 
 def get_divisible_numbers(values: list[int]) -> tuple[int, int]:

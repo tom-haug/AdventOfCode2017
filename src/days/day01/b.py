@@ -1,5 +1,5 @@
 from src.shared.controller import Controller
-from src.day01.solver import Day01Solver
+from src.days.day01.solver import Day01Solver
 
 
 class Day01PartBSolver(Day01Solver):
@@ -16,15 +16,15 @@ class Day01PartBController(Controller):
 
     def sample_files(self) -> list[(str, int)]:
         return [
-            ("src/day01/input_b_sample01.txt", 6),
-            ("src/day01/input_b_sample02.txt", 0),
-            ("src/day01/input_b_sample03.txt", 4),
-            ("src/day01/input_b_sample04.txt", 12),
-            ("src/day01/input_b_sample05.txt", 4),
+            ("src/days/day01/inputs/b_sample01.txt", 6),
+            ("src/days/day01/inputs/b_sample02.txt", 0),
+            ("src/days/day01/inputs/b_sample03.txt", 4),
+            ("src/days/day01/inputs/b_sample04.txt", 12),
+            ("src/days/day01/inputs/b_sample05.txt", 4),
         ]
 
     def file_path(self) -> str:
-        return "src/day01/input.txt"
+        return "src/days/day01/inputs/main.txt"
 
 
 if __name__ == "__main__":

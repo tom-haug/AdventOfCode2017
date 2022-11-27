@@ -1,6 +1,6 @@
 import math
 from src.shared.controller import Controller
-from src.day03.solver import Day03Solver
+from src.days.day03.solver import Day03Solver
 
 
 class Day03PartASolver(Day03Solver):
@@ -39,14 +39,14 @@ class Day03PartAController(Controller):
 
     def sample_files(self) -> list[(str, int)]:
         return [
-            ("src/day03/input_sample01.txt", 0),
-            ("src/day03/input_sample02.txt", 3),
-            ("src/day03/input_sample03.txt", 2),
-            ("src/day03/input_sample04.txt", 31),
+            ("src/days/day03/inputs/a_sample01.txt", 0),
+            ("src/days/day03/inputs/a_sample02.txt", 3),
+            ("src/days/day03/inputs/a_sample03.txt", 2),
+            ("src/days/day03/inputs/a_sample04.txt", 31),
         ]
 
     def file_path(self) -> str:
-        return "src/day03/input.txt"
+        return "src/days/day03/inputs/main.txt"
 
 
 if __name__ == "__main__":

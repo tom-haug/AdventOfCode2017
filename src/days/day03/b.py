@@ -1,5 +1,5 @@
 from src.shared.controller import Controller
-from src.day03.solver import Day03Solver
+from src.days.day03.solver import Day03Solver
 from enum import Enum
 
 
@@ -67,12 +67,12 @@ class Day03PartBController(Controller):
 
     def sample_files(self) -> list[(str, int)]:
         return [
-            ("src/day03/input_b_sample01.txt", 4),
-            ("src/day03/input_b_sample02.txt", 25),
+            ("src/days/day03/inputs/b_sample01.txt", 4),
+            ("src/days/day03/inputs/b_sample02.txt", 25),
         ]
 
     def file_path(self) -> str:
-        return "src/day03/input.txt"
+        return "src/days/day03/inputs/main.txt"
 
 
 if __name__ == "__main__":
