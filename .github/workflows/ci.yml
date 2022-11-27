@@ -50,5 +50,5 @@ jobs:
 
     - name: Run Type Check
       run: |
-        pipenv run mypy src
+        pipenv run typecheck
 
