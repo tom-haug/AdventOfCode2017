@@ -4,7 +4,7 @@ import os
 from src.code_gen.file_data import FileData
 from src.code_gen.templates.part_template import PART_TEMPLATE
 from src.code_gen.templates.solver_template import SOLVER_TEMPLATE
-from src.code_gen.templates.unittest_template import TEST_TEMPLATE
+from src.code_gen.templates.test_template import TEST_TEMPLATE
 from src.shared.variables import AOC_TOKEN
 
 

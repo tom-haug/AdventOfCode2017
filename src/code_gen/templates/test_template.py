@@ -6,9 +6,9 @@ from src.shared.controller import Controller
 
 
 class TestDay{day_string}(BaseTest):
-  def get_controller_a(self) -> Controller:
-    return Day{day_string}PartAController()
+    def get_controller_a(self) -> Controller:
+        return Day{day_string}PartAController()
 
-  def get_controller_b(self) -> Controller:
-    return Day{day_string}PartBController()
+    def get_controller_b(self) -> Controller:
+        return Day{day_string}PartBController()
 """

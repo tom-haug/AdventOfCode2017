@@ -17,3 +17,8 @@ python-dotenv = "*"
 
 [requires]
 python_version = "3.10"
+
+[scripts]
+test = "pytest"
+lint = "flake8 src"
+fmt = "black src"

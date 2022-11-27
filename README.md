@@ -33,6 +33,12 @@ $ pipenv run python -m src.day{day}.a
 Exception: Test Fail: Sample src/day03/input_sample01.txt, expecting: 0, actual: None
 ```
 
+## Testing
+Flake8
+```
+$ pipenv run test
+```
+
 ## Submit
 Once tests pass, run to submit:
 ```
@@ -42,13 +48,13 @@ $ pipenv run python -m src.day{day}.a --submit
 ## Linting
 Flake8
 ```
-$ pipenv run flake8 src
+$ pipenv run lint
 ```
 
 ## Formatting
 Black
 ```
-$ pipenv run black src
+$ pipenv run fmt
 ```
 
 ## CI
