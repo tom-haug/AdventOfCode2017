@@ -1,4 +1,4 @@
-from abc import abstractclassmethod
+from abc import abstractmethod
 from src.shared.controller import Solver
 from src.shared.file_loading import load_text_file
 
@@ -9,7 +9,7 @@ AnswerType = int
 class Day04Solver(Solver):
     data: list[str]
 
-    def initialize(self, file_path: str):
+    def initialize(self, file_path: str) -> None:
         self.data = self.__load_data_structures(file_path)
 
     def __load_data_structures(self, file_path: str):
@@ -29,6 +29,6 @@ class Day04Solver(Solver):
                 valid_count += 1
         return valid_count
 
-    @abstractclassmethod
+    @abstractmethod
     def word_formatter(self, word: str) -> str:
         ...

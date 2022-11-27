@@ -15,7 +15,7 @@ class Day02PartBController(Controller):
     def new_solver(self):
         return Day02PartBSolver()
 
-    def sample_files(self) -> list[(str, int)]:
+    def sample_files(self) -> list[tuple[str, int]]:
         return [("src/days/day02/inputs/b_sample01.txt", 9)]
 
     def file_path(self) -> str:
@@ -30,7 +30,7 @@ def get_divisible_numbers(values: list[int]) -> tuple[int, int]:
             is_divisible = largest % smallest == 0
             if is_divisible:
                 return (largest, smallest)
-    raise f"Problem - No divisible numbers in [{values}]"
+    raise Exception(f"Problem - No divisible numbers in [{values}]")
 
 
 if __name__ == "__main__":

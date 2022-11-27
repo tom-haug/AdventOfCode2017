@@ -1,4 +1,4 @@
-from abc import abstractclassmethod
+from abc import abstractmethod
 from src.shared.controller import Solver
 from src.shared.file_loading import load_text_file
 
@@ -13,7 +13,7 @@ class Day02Solver(Solver):
         input = load_text_file(file_path)
         return [[int(value) for value in line.split("\t")] for line in input]
 
-    def solve(self):
+    def solve(self) -> int:
         row_values: list[int] = []
         for row in self.data:
             row_value = self.calc_row_result(row)
@@ -21,6 +21,6 @@ class Day02Solver(Solver):
         final_result = sum(row_values)
         return final_result
 
-    @abstractclassmethod
+    @abstractmethod
     def calc_row_result(self, values: list[int]) -> int:
-        pass
+        ...

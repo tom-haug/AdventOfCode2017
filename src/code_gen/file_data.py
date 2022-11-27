@@ -1,5 +1,4 @@
 import dataclasses
-from typing import Literal, Union
 
 
 @dataclasses.dataclass
@@ -9,7 +8,7 @@ class FileData(object):
     """
 
     day: int
-    part: Union[Literal["a"], Literal["b"]]
+    part: str
 
     @property
     def day_string(self) -> str:

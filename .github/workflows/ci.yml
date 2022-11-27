@@ -48,3 +48,7 @@ jobs:
       run: |
         pipenv run lint
 
+    - name: Run Type Check
+      run: |
+        pipenv run typecheck
+

@@ -1,4 +1,4 @@
-from abc import ABC, abstractclassmethod
+from abc import ABC, abstractmethod
 import argparse
 from typing import Any
 from aocd import submit
@@ -12,15 +12,15 @@ class Controller(ABC):
         self.day = day
         self.part = part
 
-    @abstractclassmethod
+    @abstractmethod
     def new_solver(self) -> Solver:
         ...
 
-    @abstractclassmethod
+    @abstractmethod
     def sample_files(self) -> list[tuple[str, Any]]:
         ...
 
-    @abstractclassmethod
+    @abstractmethod
     def file_path(self) -> str:
         ...
 

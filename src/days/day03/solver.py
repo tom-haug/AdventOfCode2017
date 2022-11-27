@@ -1,4 +1,4 @@
-from abc import abstractclassmethod
+from abc import abstractmethod
 from src.shared.controller import Solver
 from src.shared.file_loading import load_text_file
 
@@ -13,6 +13,6 @@ class Day03Solver(Solver):
         input = load_text_file(file_path)
         return int(input[0])
 
-    @abstractclassmethod
+    @abstractmethod
     def solve(self) -> int:
         ...
