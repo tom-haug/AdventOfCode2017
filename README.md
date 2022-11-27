@@ -1,21 +1,25 @@
 # AdventOfCode2017
 
-## Code Gen
-### Get Session Token 
-- got to https://adventofcode.com/ 
+## Set Session Token 
+- go to https://adventofcode.com/ 
 - make sure you are logged in
 - open devtools
 - copy value of `session` cookie
-- paste into AOC_SESSION in [.env](.env)
+- paste into `AOC_SESSION` variable in [.env](.env)
 
-## Run Code Gen
+## Start New Day
+- creates base files for day from templates
+- downloads input file from adventofcode.com
 ```
-$ pipenv run python -m src.code_gen.create_day -d {day}
+$ pipenv run new {day}
+
+example:
+$ pipenv run new 1
 ```
 
 ## Set Test Data
 - create files in the `inputs` folder for each sample data provided
-- add the samples to the `DayController` in the `part` file with filepath and expected result
+- add the samples to the `sample_files` method in `Day{day}Part{part}Controller` with filepath and expected result:
 ```python
 def sample_files(self) -> list[(str, int)]:
     return [("src/days/day02/inputs/sample01.txt", 18)]
@@ -46,24 +50,26 @@ $ pipenv run submit 1 a
 ```
 
 ## Testing
-Flake8
+Pytest is used for testing
 ```
 $ pipenv run test
 ```
 
 ## Linting
-Flake8
+Flake8 is used for linting
 ```
 $ pipenv run lint
 ```
 
 ## Formatting
-Black
+Black is used for formatting
 ```
 $ pipenv run fmt
 ```
 
 ## CI
-[Github Actions](https://github.com/tom-haug/AdventOfCode2017/actions/workflows/ci.yml)
+Github Actions is used for CI
 
-[pipeline config](.github/workflows/ci.yml)
+[CI Workflow on Github Actions](https://github.com/tom-haug/AdventOfCode2017/actions/workflows/ci.yml)
+
+[Pipeline Config](.github/workflows/ci.yml)
