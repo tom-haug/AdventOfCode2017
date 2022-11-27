@@ -17,7 +17,7 @@ class Controller(ABC):
         ...
 
     @abstractclassmethod
-    def sample_files(self) -> list[(str, Any)]:
+    def sample_files(self) -> list[tuple[str, Any]]:
         ...
 
     @abstractclassmethod

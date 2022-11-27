@@ -1,4 +1,5 @@
 from abc import ABC, abstractclassmethod
+from typing import Any
 
 
 class Solver(ABC):
@@ -7,5 +8,5 @@ class Solver(ABC):
         pass
 
     @abstractclassmethod
-    def solve(self):
+    def solve(self) -> Any:
         pass
