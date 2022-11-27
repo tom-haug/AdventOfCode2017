@@ -49,5 +49,6 @@ jobs:
         pipenv run lint
 
     - name: Run Type Check
+      run: |
         pipenv run mypy src
 
