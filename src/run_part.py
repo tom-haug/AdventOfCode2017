@@ -1,6 +1,5 @@
 import argparse
 import subprocess
-from src.code_gen.create_day import create_day
 
 
 def create_parser() -> argparse.ArgumentParser:

@@ -1,4 +1,3 @@
-import argparse
 import aocd
 import os
 from src.code_gen.file_data import FileData
