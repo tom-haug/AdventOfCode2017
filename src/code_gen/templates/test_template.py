@@ -1,6 +1,6 @@
 TEST_TEMPLATE = """
-from src.day{day_string}.a import Day{day_string}PartAController
-from src.day{day_string}.b import Day{day_string}PartBController
+from src.days.day{day_string}.a import Day{day_string}PartAController
+from src.days.day{day_string}.b import Day{day_string}PartBController
 from src.shared.base_test import BaseTest
 from src.shared.controller import Controller
 

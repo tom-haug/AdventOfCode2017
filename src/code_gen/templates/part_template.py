@@ -1,9 +1,14 @@
 PART_TEMPLATE = """
 from src.shared.controller import Controller
-from src.day{day_string}.solver import Day{day_string}Solver
+from src.days.day{day_string}.solver import Day{day_string}Solver
+
+
+AnswerType = int
+
 
 class Day{day_string}Part{part_upper}Solver(Day{day_string}Solver):
-    ...
+    def solve(self) -> AnswerType:
+        ...
 
 
 class Day{day_string}Part{part_upper}Controller(Controller):
@@ -13,11 +18,11 @@ class Day{day_string}Part{part_upper}Controller(Controller):
     def new_solver(self):
         return Day{day_string}Part{part_upper}Solver()
 
-    def sample_files(self) -> list[(str, int)]:
-        return []
+    def sample_files(self) -> list[tuple[str, AnswerType]]:
+        return [('src/days/day{day_string}/inputs/sample01.txt', -1)]
 
     def file_path(self) -> str:
-        return 'src/day{day_string}/input.txt'
+        return 'src/days/day{day_string}/inputs/main.txt'
 
 
 if __name__ == "__main__":
