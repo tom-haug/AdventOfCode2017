@@ -48,3 +48,6 @@ jobs:
       run: |
         pipenv run lint
 
+    - name: Run Type Check
+        pipenv run mypy src
+

@@ -1,12 +1,12 @@
-from abc import ABC, abstractclassmethod
+from abc import ABC, abstractmethod
 from typing import Any
 
 
 class Solver(ABC):
-    @abstractclassmethod
+    @abstractmethod
     def initialize(self, file_path: str) -> None:
         pass
 
-    @abstractclassmethod
+    @abstractmethod
     def solve(self) -> Any:
         pass

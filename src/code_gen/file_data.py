@@ -9,7 +9,7 @@ class FileData(object):
     """
 
     day: int
-    part: Union[Literal["a"], Literal["b"]]
+    part: str
 
     @property
     def day_string(self) -> str:

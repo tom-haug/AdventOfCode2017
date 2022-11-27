@@ -12,6 +12,7 @@ advent-of-code-data = "*"
 black = "*"
 flake8 = "*"
 python-dotenv = "*"
+mypy = "*"
 
 [dev-packages]
 

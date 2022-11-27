@@ -1,13 +1,13 @@
-from abc import ABC, abstractclassmethod
+from abc import ABC, abstractmethod
 from src.shared.controller import Controller
 
 
 class BaseTest(ABC):
-    @abstractclassmethod
+    @abstractmethod
     def get_controller_a(self) -> Controller:
         ...
 
-    @abstractclassmethod
+    @abstractmethod
     def get_controller_b(self) -> Controller:
         ...
 

@@ -11,9 +11,9 @@ class Direction(Enum):
 
 
 class Day03PartBSolver(Day03Solver):
-    def solve(self):
+    def solve(self) -> int:
         target_value = self.data
-        values = {}
+        values: dict[tuple[int, int], int] = {}
         cur_x = 0
         cur_y = 0
         dir = Direction.RIGHT
@@ -65,7 +65,7 @@ class Day03PartBController(Controller):
     def new_solver(self):
         return Day03PartBSolver()
 
-    def sample_files(self) -> list[(str, int)]:
+    def sample_files(self) -> list[tuple[str, int]]:
         return [
             ("src/days/day03/inputs/b_sample01.txt", 4),
             ("src/days/day03/inputs/b_sample02.txt", 25),

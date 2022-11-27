@@ -14,7 +14,7 @@ class Day01PartBController(Controller):
     def new_solver(self):
         return Day01PartBSolver()
 
-    def sample_files(self) -> list[(str, int)]:
+    def sample_files(self) -> list[tuple[str, int]]:
         return [
             ("src/days/day01/inputs/b_sample01.txt", 6),
             ("src/days/day01/inputs/b_sample02.txt", 0),

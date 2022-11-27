@@ -1,4 +1,4 @@
-from abc import abstractclassmethod
+from abc import abstractmethod
 from src.shared.controller import Solver
 from src.shared.file_loading import load_text_file
 
@@ -18,12 +18,12 @@ class Day01Solver(Solver):
         repeat_digits = get_repeat_digits(self.data, digit_offset)
         return sum(repeat_digits)
 
-    @abstractclassmethod
+    @abstractmethod
     def calc_digit_offset(self, values: list[int]) -> int:
-        pass
+        ...
 
 
-def get_repeat_digits(items: list[int], next_digit_offset: int) -> int:
+def get_repeat_digits(items: list[int], next_digit_offset: int) -> list[int]:
     repeat_digits: list[int] = []
     for idx, digit in enumerate(items):
         next_idx = idx + next_digit_offset
