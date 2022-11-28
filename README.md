@@ -67,6 +67,16 @@ Black is used for formatting
 $ pipenv run fmt
 ```
 
+## Run all quality checks and auto-format
+``` 
+$ pipenv run checks 
+``` 
+
+## Install Pre-Commit hook to run all checks
+```
+$ pipenv run setup
+```
+
 ## CI
 Github Actions is used for CI
 

@@ -7,7 +7,7 @@ from src.shared.solver import Solver
 
 
 class Controller(ABC):
-    def __init__(self, year, day, part):
+    def __init__(self, year: int, day: int, part: str):
         self.year = year
         self.day = day
         self.part = part
@@ -47,13 +47,13 @@ class Controller(ABC):
         print(f"Result: {result}")
         self.try_submit(result)
 
-    def solve(self, file_path):
+    def solve(self, file_path: str) -> Any:
         solver = self.new_solver()
         solver.initialize(file_path)
         result = solver.solve()
         return result
 
-    def try_submit(self, result):
+    def try_submit(self, result: Any):
         args = create_parser().parse_args()
         do_submit = args.submit
         if do_submit:
