@@ -11,7 +11,7 @@ class Day06Solver(Solver):
 
     def __load_data_structures(self, file_path: str) -> list[int]:
         input = load_text_file(file_path)
-        return [int(value) for value in input[0].split('\t')]
+        return [int(value) for value in input[0].split("\t")]
 
     def solve(self) -> int:
         banks = self.data
@@ -47,5 +47,7 @@ class Day06Solver(Solver):
         return hash(tup)
 
     @abstractmethod
-    def get_result(self, bank_hashes: dict[int, int], ending_cycle_number: int, ending_hash: int) -> int:
+    def get_result(
+        self, bank_hashes: dict[int, int], ending_cycle_number: int, ending_hash: int
+    ) -> int:
         ...
