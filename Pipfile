@@ -27,3 +27,9 @@ fmt = "black src"
 new = "python -m src.new_day"
 part = "python -m src.run_part"
 submit = "python -m src.run_part --submit"
+checks = """sh -c "
+  pipenv run lint \
+  && pipenv run typecheck \
+  && pipenv run fmt
+  "
+"""
