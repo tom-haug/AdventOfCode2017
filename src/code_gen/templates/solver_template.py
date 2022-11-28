@@ -1,6 +1,5 @@
 SOLVER_TEMPLATE = """
-from abc import abstractclassmethod
-from typing import Any
+from abc import abstractmethod
 from src.shared.controller import Solver
 from src.shared.file_loading import load_text_file
 
@@ -15,7 +14,7 @@ class Day{day_string}Solver(Solver):
         input = load_text_file(file_path)
         return input
 
-    @abstractclassmethod
-    def solve(self) -> Any:
+    @abstractmethod
+    def solve(self) -> int:
         ...
 """

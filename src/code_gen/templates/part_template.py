@@ -8,7 +8,7 @@ AnswerType = int
 
 class Day{day_string}Part{part_upper}Solver(Day{day_string}Solver):
     def solve(self) -> AnswerType:
-        ...
+        return -1
 
 
 class Day{day_string}Part{part_upper}Controller(Controller):
